@@ -1,0 +1,220 @@
+---
+description: Design system tokens (spacing, radius, typography, shadows, motion) and folder structure for the Digital Bond landing page.
+globs: ["**/*.html", "**/*.scss", "**/*.css", "**/*.ts"]
+alwaysApply: true
+---
+
+# Design System
+
+## Layout
+
+Container
+
+1440px
+
+12-column responsive grid
+
+8px spacing system
+
+Large whitespace
+
+Section spacing
+
+Desktop (lg, 1024px+)
+
+120px
+
+Tablet (md, 768–1023px)
+
+96px
+
+Mobile (sm, up to 767px)
+
+72px
+
+Breakpoints: sm 640 / md 768 / lg 1024 / xl 1280 / 2xl 1440. See project.md.
+
+The assessment brief tests specific literal viewport widths — always manually verify the layout (no horizontal scroll, no clipped/overlapping content) at 375px and 480px (mobile), 768px and 1024px (tablet), 1440px (desktop), and at least one ultra-wide width (e.g. 1920px+) where content stays centered inside the 1440px container.
+
+---
+
+## Radius
+
+Cards
+
+20px
+
+Buttons
+
+16px
+
+Inputs
+
+16px
+
+Images
+
+24px
+
+Badges
+
+999px
+
+---
+
+## Typography
+
+Modern sans-serif
+
+H1
+
+64px
+
+H2
+
+48px
+
+H3
+
+32px
+
+Body
+
+18px
+
+Small
+
+16px
+
+Font Weight
+
+400
+
+500
+
+600
+
+700
+
+---
+
+## Cards
+
+Rounded corners
+
+Soft shadow
+
+Thin border
+
+Hover lift
+
+Subtle glow
+
+---
+
+## Buttons
+
+Primary
+
+Solid Red
+
+Secondary
+
+Outline
+
+Ghost
+
+Transparent
+
+Hover
+
+Scale
+
+Shadow
+
+Transition
+
+---
+
+## Forms
+
+Rounded
+
+Floating Labels
+
+Inline Validation
+
+Accessible
+
+---
+
+## Icons
+
+Lucide Angular
+
+SVG only
+
+Consistent size
+
+---
+
+## Images
+
+NgOptimizedImage
+
+Hero image
+
+priority
+
+All other images
+
+lazy
+
+Use WebP or AVIF
+
+---
+
+## Shadows
+
+Soft only
+
+Never use strong shadows
+
+---
+
+## Motion
+
+Modern
+
+Subtle
+
+Fast
+
+Premium
+
+No flashy effects
+
+---
+
+## Project Structure
+
+```
+src/app/
+  core/           # singleton services, guards, interceptors
+  shared/
+    ui/           # dumb, reusable presentational components (button, card, badge...)
+    utils/        # pipes, directives, helper functions
+  features/
+    hero/
+    about/
+    services/
+    testimonials/
+    contact/
+    footer/
+    navbar/
+  pages/
+    home/
+    done/         # /done success page
+```
+
+Each feature folder is self-contained (component + styles + any feature-specific types). Anything reused across two or more features moves into `shared/ui`. Before creating a new component, check `shared/ui` first.
