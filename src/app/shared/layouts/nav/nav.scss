@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.nav {
+  background-color: transparent;
+  font-family: var(--font-family);
+}
+
+.nav--scrolled {
+  background-color: color-mix(in srgb, var(--color-surface) 90%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.nav--elevated {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-social {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.nav-social--lg {
+  width: 2.75rem;
+  height: 2.75rem;
+}

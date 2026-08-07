@@ -1,7 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@use "./app/styles/fonts.scss";
 @import "tailwindcss"; 
 
 
+// fonts 
+:root {
+  --font-family: "Google Sans", sans-serif;
+  
+}
+
+// html {
+//   font-family: var(--font-family);
+// }
+
+body {
+  font-family: inherit;
+} 
+
+// colors 
 
 :root {
     /* ===== Brand ===== */
@@ -52,6 +68,13 @@
     --radius-lg: 18px;
     --radius-xl: 24px;
     --radius-full: 9999px;
+  
+    /* Component-specific radii, per design-system.mdc */
+    --radius-card: 20px;
+    --radius-button: 16px;
+    --radius-input: 16px;
+    --radius-image: 24px;
+    --radius-badge: 999px;
   
     /* ===== Layout ===== */
   

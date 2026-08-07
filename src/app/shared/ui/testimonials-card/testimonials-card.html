@@ -1,0 +1,50 @@
+<article
+  class="flex h-full flex-col rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-sm)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[var(--shadow-md)] sm:p-8"
+>
+  <div class="flex items-center gap-4">
+    <img
+      [ngSrc]="testimonial().avatarSrc"
+      width="64"
+      height="64"
+      alt=""
+      loading="lazy"
+      class="size-16 shrink-0 rounded-full object-cover ring-1 ring-[var(--color-border)]"
+    />
+
+    <div class="min-w-0">
+      <h3 class="m-0 truncate text-lg font-semibold text-[var(--color-text-primary)]">
+        {{ testimonial().name }}
+      </h3>
+      <p class="m-0 mt-1 truncate text-sm text-[var(--color-text-secondary)]">
+        {{ testimonial().title }} · {{ testimonial().company }}
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="mt-5 flex items-center gap-1"
+    [attr.aria-label]="testimonial().rating + ' out of 5 stars'"
+    role="img"
+  >
+    @for (slot of starSlots; track slot) {
+      <lucide-icon
+        name="star"
+        [size]="18"
+        [strokeWidth]="1.75"
+        class="transition-colors duration-200 ease-out"
+        [ngClass]="
+          slot <= testimonial().rating
+            ? 'text-[var(--color-primary)] fill-[var(--color-primary)]'
+            : 'text-[var(--color-border)]'
+        "
+        aria-hidden="true"
+      />
+    }
+  </div>
+
+  <p
+    class="m-0 mt-5 flex-1 text-base leading-relaxed text-[var(--color-text-secondary)] sm:text-lg"
+  >
+    “{{ testimonial().message }}”
+  </p>
+</article>

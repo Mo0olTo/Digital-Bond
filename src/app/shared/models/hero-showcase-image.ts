@@ -1,0 +1,6 @@
+export interface HeroShowcaseImage {
+    readonly src: string;
+    readonly alt: string;
+    readonly width: number;
+    readonly height: number;
+}
