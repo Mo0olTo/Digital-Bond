@@ -1,0 +1,54 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.service-card {
+  position: relative;
+  padding-top: 0.25rem;
+}
+
+.service-card__dot {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgb(255 255 255 / 0.16);
+  transition:
+    transform 300ms ease-out,
+    box-shadow 300ms ease-out;
+}
+
+.service-card:hover .service-card__dot,
+.service-card:focus-within .service-card__dot {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 5px rgb(198 40 40 / 0.35);
+}
+
+.service-card__icon-wrap {
+  will-change: transform;
+}
+
+.service-card:hover .service-card__icon-wrap,
+.service-card:focus-within .service-card__icon-wrap {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card__dot,
+  .service-card__icon-wrap,
+  .service-card__icon {
+    transition: none;
+  }
+
+  .service-card:hover .service-card__dot,
+  .service-card:focus-within .service-card__dot,
+  .service-card:hover .service-card__icon-wrap,
+  .service-card:focus-within .service-card__icon-wrap {
+    transform: none;
+  }
+}

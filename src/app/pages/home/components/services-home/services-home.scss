@@ -1,0 +1,161 @@
+:host {
+  display: block;
+}
+
+.services-home {
+  position: relative;
+  padding-block: 4.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgb(198 40 40 / 0.12), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgb(255 255 255 / 0.05), transparent 35%),
+    linear-gradient(180deg, #1a1a1a 0%, #111111 100%);
+}
+
+.services-home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgb(255 255 255 / 0.04) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .services-home {
+    padding-block: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-home {
+    padding-block: 7.5rem;
+  }
+}
+
+.services-home__carousel {
+  position: relative;
+  z-index: 1;
+}
+
+.services-home__viewport {
+  position: relative;
+  overflow: hidden;
+  padding-block: 0.5rem 0.25rem;
+  cursor: grab;
+}
+
+/* Fixed timeline line — stays put while Embla scrolls the track */
+.services-home__viewport::before {
+  content: '';
+  position: absolute;
+  top: calc(0.5rem + 0.55rem);
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 1px;
+  background: rgb(255 255 255 / 0.55);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services-home__viewport:active {
+  cursor: grabbing;
+}
+
+.services-home__track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: 0;
+}
+
+.services-home__slide {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 100%;
+  min-width: 0;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .services-home__track {
+    margin-left: -0.75rem;
+  }
+
+  .services-home__slide {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .services-home__slide {
+    flex-basis: 33.333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-home__slide {
+    flex-basis: 25%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .services-home__slide {
+    flex-basis: 20%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .services-home__slide {
+    flex-basis: calc(100% / 7);
+  }
+}
+
+.services-home__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.services-home__dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.services-home__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: rgb(255 255 255 / 0.28);
+  cursor: pointer;
+  transition:
+    transform 200ms ease-out,
+    background-color 200ms ease-out;
+}
+
+.services-home__dot:hover,
+.services-home__dot:focus-visible {
+  background: rgb(255 255 255 / 0.7);
+  outline: none;
+}
+
+.services-home__dot--active {
+  background: var(--color-primary);
+  transform: scale(1.25);
+}
+
+.services-home__nav {
+  display: flex;
+  gap: 0.75rem;
+}
+

@@ -1,0 +1,57 @@
+<section
+  class="services-home"
+  aria-labelledby="services-home-heading"
+  (pointerenter)="onPointerEnter()"
+  (pointerleave)="onPointerLeave()"
+>
+  <div class="services-home__content relative z-[1]">
+    <div class="mx-auto mb-10 flex w-full max-w-[var(--container-width)] justify-center px-4 md:px-8">
+      <app-section-title [title]="'services'" [headingId]="'services-home-heading'" />
+    </div>
+
+    <div class="services-home__carousel mx-auto w-full max-w-[var(--container-width)] px-4 md:px-8">
+      <div class="services-home__viewport" #viewport>
+        <div class="services-home__track">
+          @for (service of services; track service.id) {
+            <div class="services-home__slide">
+              <app-service-card [service]="service" />
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="services-home__controls">
+        <div class="services-home__dots" role="tablist" aria-label="Service slides">
+          @for (snap of scrollSnaps(); track $index; let i = $index) {
+            <button
+              type="button"
+              class="services-home__dot"
+              [class.services-home__dot--active]="selectedIndex() === i"
+              [attr.aria-label]="'Go to slide ' + (i + 1)"
+              [attr.aria-selected]="selectedIndex() === i"
+              role="tab"
+              (click)="scrollTo(i)"
+            ></button>
+          }
+        </div>
+
+        <div class="services-home__nav">
+          <app-carousel-button
+            [direction]="'prev'"
+            [variant]="'dark'"
+            [ariaLabel]="'Previous services'"
+            [disabled]="!canScrollPrev()"
+            (pressed)="scrollPrev()"
+          />
+          <app-carousel-button
+            [direction]="'next'"
+            [variant]="'dark'"
+            [ariaLabel]="'Next services'"
+            [disabled]="!canScrollNext()"
+            (pressed)="scrollNext()"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

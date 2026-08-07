@@ -1,0 +1,120 @@
+<section
+  class="relative isolate min-h-[100svh] w-full overflow-hidden bg-[var(--color-background)] "
+>
+  <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <div class="hero-blob hero-blob--a"></div>
+    <div class="hero-blob hero-blob--b"></div>
+    <div class="hero-blob hero-blob--c"></div>
+
+    <img
+      ngSrc="/images/icons/half_circle_icon.png"
+      width="80"
+      height="80"
+      alt=""
+      class="hero-icon hero-icon--half-circle"
+    />
+    <img
+      ngSrc="/images/icons/close_icon.png"
+      width="20"
+      height="30"
+      alt=""
+      class="hero-icon hero-icon--close"
+    />
+    <img
+      ngSrc="/images/icons/two_face_icon.png"
+      width="120"
+      height="120"
+      alt=""
+      class="hero-icon hero-icon--two-face"
+    />
+
+    <div class="hero-bond-stack">
+      <div class="hero-bond">
+        <img
+          ngSrc="/images/icons/bond-1-red.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="!bondWhiteActive()"
+        />
+        <img
+          ngSrc="/images/icons/bond-2-white.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="bondWhiteActive()"
+        />
+      </div>
+
+      <div class="hero-bond">
+        <img
+          ngSrc="/images/icons/bond-1-red.webp"
+          width="160"
+          height="60"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="!bondWhiteActive()"
+        />
+        <img
+          ngSrc="/images/icons/bond-2-white.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="bondWhiteActive()"
+        />
+      </div>
+    </div>
+
+    <img
+      ngSrc="/images/Screens/screen-circle.png"
+      width="640"
+      height="640"
+      alt="Circle-Design"
+      class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 select-none"
+    />
+  </div>
+
+  <div class="relative container z-10 mx-auto flex min-h-[100svh] w-full max-w-[var(--container-width)]
+        flex-col justify-start px-4 sm:px-6 lg:px-8">
+    
+    <!-- header -->
+    <div class="flex justify-center items-center z-50">
+        <div class="mt-10 pt-6 flex justify-center">
+            <p class="flex flex-col items-center gap-2 text-[var(--color-primary)] md:flex-row md:gap-2">
+              <span class="text-4xl lg:text-7xl font-[800] tracking-[6px] uppercase">Digital</span>
+              <img ngSrc="/images/logos/logo_black.webp" width="60" height="65" priority class="self-center" alt="Digital Bond Logo">
+              <span class="text-4xl lg:text-7xl font-[800] tracking-[6px]  uppercase">Bond</span>
+            </p>
+          </div>
+    </div>
+
+    <div class="hero-showcase-wrap">
+      <div class="hero-showcase" aria-live="polite">
+        @for (image of showcaseImages; track image.src; let i = $index) {
+          <img
+            [ngSrc]="image.src"
+            [width]="image.width"
+            [height]="image.height"
+            [alt]="image.alt"
+            [priority]="i === 0"
+            class="hero-showcase__image"
+            [class.hero-showcase__image--active]="activeShowcaseIndex() === i"
+          />
+        }
+      </div>
+
+      <img
+        ngSrc="/images/colored%20layers/shadow_effect_right.png"
+        width="400"
+        height="600"
+        alt=""
+        aria-hidden="true"
+        class="hero-showcase-glow"
+      />
+    </div>
+    
+  </div>
+</section>
