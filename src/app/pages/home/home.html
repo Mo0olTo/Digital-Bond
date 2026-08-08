@@ -3,8 +3,25 @@
 </header>
 
 <main>
-  <app-services-home></app-services-home>
-  <app-clients></app-clients>
-  <app-testimonials></app-testimonials>
-  <app-contact-home></app-contact-home>
+  @defer (on viewport) {
+    <app-services-home></app-services-home>
+  } @placeholder {
+    <div class="min-h-[20rem]" aria-hidden="true"></div>
+  }
+  @defer (on viewport) {
+    <app-clients></app-clients>
+  } @placeholder {
+    <div class="min-h-[20rem]" aria-hidden="true"></div>
+  }
+  @defer (on viewport) {
+    <app-testimonials></app-testimonials>
+  } @placeholder {
+    <div class="min-h-[20rem]" aria-hidden="true"></div>
+  }
+  @defer (on viewport) {
+    <app-contact-home></app-contact-home>
+  } @placeholder {
+    <div class="min-h-[20rem]" aria-hidden="true"></div>
+  }
+
 </main>

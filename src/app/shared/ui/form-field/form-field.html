@@ -1,6 +1,6 @@
 <div class="form-field flex w-full flex-col items-start justify-center gap-1">
   <label
-    class="mb-1 block text-sm font-medium text-[var(--color-text-primary)]"
+    class="mb-1 block text-sm font-medium text-[var(--color-primary)]"
     [attr.for]="inputId()"
   >
     {{ label() }}
@@ -22,7 +22,7 @@
     ></textarea>
   } @else if (type() === 'tel') {
     <div
-      class="form-field__tel w-full"
+      class="form-field__tel relative w-full"
       [class.form-field__tel--invalid]="isInvalid()"
     >
       @if (isBrowser) {
@@ -40,6 +40,7 @@
           [loadUtils]="loadUtils"
           [inputAttributes]="{
             id: inputId(),
+            class: 'pe-11',
             autocomplete: autocomplete() || 'tel',
             'aria-invalid': isInvalid() ? 'true' : 'false',
             'aria-describedby': errorId,
@@ -50,7 +51,7 @@
         />
       } @else {
         <input
-          class="form-field__control form-field__control--tel-fallback"
+          class="form-field__control form-field__control--tel-fallback pe-11"
           [id]="inputId()"
           type="tel"
           [placeholder]="placeholder()"
@@ -63,22 +64,56 @@
           (blur)="onBlur()"
         />
       }
+
+      @if (isInvalid()) {
+        <lucide-icon
+          name="circle-x"
+          [size]="20"
+          class="pointer-events-none absolute end-3 top-1/2 z-10 -translate-y-1/2 text-[var(--color-primary)]"
+          aria-hidden="true"
+        />
+      } @else if (isValid()) {
+        <lucide-icon
+          name="circle-check"
+          [size]="20"
+          class="pointer-events-none absolute end-3 top-1/2 z-10 -translate-y-1/2 text-green-600"
+          aria-hidden="true"
+        />
+      }
     </div>
   } @else {
-    <input
-      class="form-field__control text-[var(--color-text-primary)]"
-      [id]="inputId()"
-      [type]="type()"
-      [placeholder]="placeholder()"
-      [value]="value()"
-      [disabled]="disabled()"
-      [attr.autocomplete]="autocomplete() || null"
-      [attr.aria-invalid]="isInvalid()"
-      [attr.aria-describedby]="errorId"
-      (input)="onInput($event)"
-      (blur)="onBlur()"
-      [class.form-field__control--invalid]="isInvalid()"
-    />
+    <div class="relative w-full">
+      <input
+        class="form-field__control pe-11 text-[var(--color-text-primary)]"
+        [id]="inputId()"
+        [type]="type()"
+        [placeholder]="placeholder()"
+        [value]="value()"
+        [disabled]="disabled()"
+        [attr.autocomplete]="autocomplete() || null"
+        [attr.aria-invalid]="isInvalid()"
+        [attr.aria-describedby]="errorId"
+        (input)="onInput($event)"
+        (blur)="onBlur()"
+        [class.form-field__control--invalid]="isInvalid()"
+      />
+
+      @if (isInvalid()) {
+        <lucide-icon
+          name="circle-x"
+          [size]="20"
+          class="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-[var(--color-primary)]"
+          aria-hidden="true"
+        />
+      } @else if (isValid()) {
+        <lucide-icon
+          name="circle-check"
+          [size]="20"
+          class="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-green-600"
+          aria-hidden="true"
+        />
+      }
+    </div>
   }
 
   <app-error-msg

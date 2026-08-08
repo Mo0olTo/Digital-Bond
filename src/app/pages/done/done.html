@@ -1,1 +1,49 @@
-<p>done works!</p>
+<section class="relative isolate min-h-dvh w-full overflow-hidden bg-[var(--color-background)]">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <img
+      ngSrc="/images/Screens/bg-loader.webp"
+      fill
+      priority
+      class="object-cover"
+      alt=""
+    />
+    <div class="absolute inset-0 bg-black/55"></div>
+  </div>
+
+  <div class="relative z-10 flex min-h-dvh items-center justify-center px-4 py-10 sm:px-6">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="done-title"
+      aria-describedby="done-description"
+      class="w-full max-w-md rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 text-center shadow-[var(--shadow-md)] sm:p-10"
+    >
+      <p
+        class="m-0 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-primary)]"
+      >
+        Success
+      </p>
+
+      <h1
+        id="done-title"
+        class="m-0 mt-3 text-2xl font-bold text-[var(--color-text-primary)] sm:text-3xl"
+      >
+        Thank you!
+      </h1>
+
+      <p
+        id="done-description"
+        class="m-0 mt-4 text-base leading-relaxed text-[var(--color-text-secondary)] sm:text-lg"
+      >
+        Your message was sent successfully. A member of our team will get back to you soon.
+      </p>
+
+      <a
+        routerLink="/home"
+        class="mt-8 inline-flex w-full items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-text-white)] transition-[transform,background-color,box-shadow] duration-300 ease-out hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-md)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] active:scale-[0.99]"
+      >
+        Back to Home
+      </a>
+    </div>
+  </div>
+</section>

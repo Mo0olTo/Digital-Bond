@@ -1,8 +1,9 @@
 <nav
   aria-label="Primary"
   class="nav sticky top-0 z-50 w-full transition-[background-color,box-shadow,backdrop-filter] duration-[var(--transition-normal)] ease-out"
-  [class.nav--scrolled]="scrolled() || menuOpen()"
+  [class.nav--scrolled]="scrolled()"
   [class.nav--elevated]="scrolled()"
+  [class.themeScroll]="scrolled()"
 >
   <div
     class=" mx-auto flex h-[var(--navbar-height)] w-full container items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
@@ -14,7 +15,7 @@
       aria-label="Digital Bond home"
     >
       <img
-        ngSrc="/images/logos/logo_black.webp"
+        [ngSrc]="scrolled() ? '/images/logos/logo.webp' : '/images/logos/logo_black.webp'"
         alt="Digital Bond"
         width="140"
         height="40"
@@ -28,9 +29,9 @@
         <li>
           <a
             [routerLink]="link.path"
-            routerLinkActive="!text-[var(--color-primary)]"
+            routerLinkActive="nav-link--active"
             [routerLinkActiveOptions]="{ exact: link.exact }"
-            class="text-lg font-bold text-[var(--color-text-primary)] transition-colors duration-[var(--transition-fast)] ease-out hover:text-[var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-primary)]"
+            class="nav-link text-lg font-bold transition-colors duration-[var(--transition-fast)] ease-out focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-primary)]"
           >
             {{ link.label }}
           </a>
@@ -59,7 +60,7 @@
 
     <button
       type="button"
-      class="relative z-10 inline-flex cursor-pointer size-12 items-center justify-center rounded-[var(--radius-sm)] text-[var(--color-text-primary)] transition-colors duration-[var(--transition-fast)] ease-out hover:text-[var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] lg:hidden"
+      class="nav-menu-btn relative z-10 inline-flex cursor-pointer size-12 items-center justify-center rounded-[var(--radius-sm)] transition-colors duration-[var(--transition-fast)] ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] lg:hidden"
       [attr.aria-expanded]="menuOpen()"
       aria-controls="mobile-nav-panel"
       [attr.aria-label]="menuOpen() ? 'Close menu' : 'Open menu'"
@@ -76,16 +77,16 @@
   @if (menuOpen()) {
     <div
       id="mobile-nav-panel"
-      class="border-t border-[var(--color-border)] bg-[var(--color-surface)] lg:hidden"
+      class="mobile-nav-panel border-t lg:hidden"
     >
       <ul class="mx-auto flex max-w-[var(--container-width)] flex-col gap-1 px-4 py-4 sm:px-6" role="list">
         @for (link of navLinks; track link.path) {
           <li>
             <a
               [routerLink]="link.path"
-              routerLinkActive="!text-[var(--color-primary)] !bg-[var(--color-primary-light)]"
+              routerLinkActive="nav-link--active"
               [routerLinkActiveOptions]="{ exact: link.exact }"
-              class="block rounded-[var(--radius-md)] px-4 py-3 text-base font-medium text-[var(--color-text-primary)] transition-colors duration-[var(--transition-fast)] ease-out hover:bg-[var(--color-surface-secondary)] hover:text-[var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+              class="nav-link mobile-nav-link block rounded-[var(--radius-md)] px-4 py-3 text-base font-medium transition-colors duration-[var(--transition-fast)] ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
               (click)="closeMenu()"
             >
               {{ link.label }}
@@ -95,7 +96,7 @@
       </ul>
 
       <ul
-        class="mx-auto flex max-w-[var(--container-width)] items-center justify-center gap-2 border-t border-[var(--color-border)] px-4 py-4 sm:px-6"
+        class="mobile-nav-socials mx-auto flex max-w-[var(--container-width)] items-center justify-center gap-2 border-t px-4 py-4 sm:px-6"
         role="list"
       >
         @for (social of socialLinks; track social.icon) {
@@ -108,9 +109,9 @@
               class="nav-social nav-social--lg"
             >
               <ng-container
-              [ngTemplateOutlet]="socialIcon"
-              [ngTemplateOutletContext]="{ $implicit: social.icon }"
-            />
+                [ngTemplateOutlet]="socialIcon"
+                [ngTemplateOutletContext]="{ $implicit: social.icon }"
+              />
             </a>
           </li>
         }

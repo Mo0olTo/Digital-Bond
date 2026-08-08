@@ -2,14 +2,14 @@ import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
-
 import { ContactService } from '../../core/services/contact.service';
 import { FormField } from '../../shared/ui/form-field/form-field';
-import { SectionTitle } from "../../shared/ui/section-title/section-title";
+import { SectionBackgorund } from '../../shared/ui/section-backgorund/section-backgorund';
+import { SectionTitle } from '../../shared/ui/section-title/section-title';
 
 @Component({
   selector: 'app-contact-us',
-  imports: [ReactiveFormsModule, FormField, SectionTitle],
+  imports: [ReactiveFormsModule, FormField, SectionTitle, SectionBackgorund, ],
   templateUrl: './contact-us.html',
   styleUrl: './contact-us.scss',
 })

@@ -21,7 +21,9 @@
     }
 
     @if (type() === 'tel' && control()?.errors?.['invalidPhone']) {
-      <p class="error-messages__item">{{ label() }} must be a valid phone number.</p>
+      <p class="error-messages__item">
+        {{ label() }} must be a valid Egyptian mobile number (010, 011, 012, or 015).
+      </p>
     }
   </div>
 }

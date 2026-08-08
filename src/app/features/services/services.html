@@ -1,1 +1,36 @@
-<p>services works!</p>
+<section class="w-full bg-[var(--color-background)]">
+  <app-section-backgorund
+    sectionName="services"
+    title="our services"
+  ></app-section-backgorund> 
+
+
+    @defer (on viewport) {
+      <div class="mt-6 flex w-full items-center justify-center">
+        <app-section-title
+        title="our services"
+        headingId="services-heading"
+        ></app-section-title>
+        </div>
+      
+        <div
+          class="mx-auto w-full max-w-[var(--container-width)] px-4 py-[4.5rem] sm:px-6 md:px-8 md:py-24 lg:py-[7.5rem]"
+          aria-label="Services"
+        >
+          <ul
+            role="list"
+            class="m-0 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10"
+          >
+            @for (service of services; track service.id) {
+              <li class="min-w-0">
+                <app-service-card [service]="service" variant="card" />
+              </li>
+            }
+          </ul>
+        </div>
+    } @placeholder {
+      <div class="min-h-[20rem]" aria-hidden="true"></div>
+    }
+
+
+</section>

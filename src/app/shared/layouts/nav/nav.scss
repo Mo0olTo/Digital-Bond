@@ -1,9 +1,12 @@
 :host {
   display: block;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .nav {
-  background-color: transparent;
+  background-color: var(--color-surface) transparent;
   font-family: var(--font-family);
 }
 
@@ -14,6 +17,99 @@
 
 .nav--elevated {
   box-shadow: var(--shadow-sm);
+}
+
+.themeScroll {
+  background:
+    radial-gradient(circle at 20% 20%, rgb(198 40 40 / 0.12), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgb(255 255 255 / 0.05), transparent 35%),
+    linear-gradient(180deg, #1a1a1a 0%, #111111 100%);
+}
+
+.nav-link {
+  color: var(--color-text-primary);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.nav-link--active {
+  color: var(--color-primary);
+}
+
+.nav--scrolled .nav-link {
+  color: #ffffff;
+
+  &:hover {
+    color: #d1d5db;
+  }
+}
+
+.nav--scrolled .nav-link--active {
+  color: #9ca3af;
+}
+
+.nav-menu-btn {
+  color: var(--color-text-primary);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.nav--scrolled .nav-menu-btn {
+  color: #ffffff;
+
+  &:hover {
+    color: #d1d5db;
+  }
+}
+
+.mobile-nav-panel {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.mobile-nav-socials {
+  border-color: var(--color-border);
+}
+
+.mobile-nav-link {
+  &:hover {
+    background-color: var(--color-surface-secondary);
+  }
+}
+
+.nav--scrolled .mobile-nav-panel {
+  border-color: rgb(255 255 255 / 0.12);
+  background:
+    radial-gradient(circle at 20% 20%, rgb(198 40 40 / 0.12), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgb(255 255 255 / 0.05), transparent 35%),
+    linear-gradient(180deg, #1a1a1a 0%, #111111 100%);
+}
+
+.nav--scrolled .mobile-nav-socials {
+  border-color: rgb(255 255 255 / 0.12);
+}
+
+.nav--scrolled .mobile-nav-link {
+  &:hover {
+    background-color: rgb(255 255 255 / 0.08);
+  }
+}
+
+.nav--scrolled .mobile-nav-link.nav-link--active {
+  background-color: rgb(255 255 255 / 0.1);
+  color: #9ca3af;
+}
+
+.nav--scrolled .nav-social {
+  color: #ffffff;
+
+  &:hover {
+    color: #d1d5db;
+  }
 }
 
 .nav-social {
