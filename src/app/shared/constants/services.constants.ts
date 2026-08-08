@@ -6,6 +6,7 @@ import {
   MessageSquare,
   Search,
   Share2,
+  Smartphone,
   TrendingUp,
   UtensilsCrossed,
 } from 'lucide-angular';
@@ -14,25 +15,11 @@ import { Service } from '../models/service.model';
 // TODO: replace placeholder copy with final Digital Bond service content
 export const SERVICES: readonly Service[] = [
   {
-    id: 'branding',
-    title: 'Branding',
-    description:
-      'Identity systems, visual language, and brand guidelines that feel premium and consistent.',
-    icon: Megaphone,
-  },
-  {
     id: 'social-media',
     title: 'Social Media',
     description:
       'Content strategy and creative systems that keep your channels active and on-brand.',
     icon: Share2,
-  },
-  {
-    id: 'performance-marketing',
-    title: 'Performance Marketing',
-    description:
-      'Paid acquisition campaigns focused on measurable growth across search and social.',
-    icon: TrendingUp,
   },
   {
     id: 'web-development',
@@ -42,18 +29,18 @@ export const SERVICES: readonly Service[] = [
     icon: Laptop,
   },
   {
+    id: 'mobile-apps',
+    title: 'Mobile Apps',
+    description:
+      'Modern, high-performance mobile applications with intuitive experiences built for iOS and Android.',
+    icon: Smartphone,
+  },
+  {
     id: 'seo',
     title: 'SEO Optimization',
     description:
       'Technical and content SEO improvements that help the right audience find you.',
     icon: Search,
-  },
-  {
-    id: 'video-production',
-    title: 'Video Production',
-    description:
-      'Story-driven video content for campaigns, product launches, and social platforms.',
-    icon: Clapperboard,
   },
   {
     id: 'influencer-marketing',
@@ -63,17 +50,32 @@ export const SERVICES: readonly Service[] = [
     icon: Magnet,
   },
   {
-    id: 'food-styling',
-    title: 'Food Styling',
-    description:
-      'Appetite-forward photography and styling crafted for menus, ads, and social feeds.',
-    icon: UtensilsCrossed,
-  },
-  {
     id: 'sms-campaigns',
     title: 'SMS Campaigns',
     description:
       'Direct messaging sequences that drive awareness, retention, and timely conversions.',
     icon: MessageSquare,
   },
+  {
+    id: 'media-production',
+    title: 'Media Production',
+    description:
+      'Story-driven media content for campaigns, product launches, and social platforms.',
+    icon: Clapperboard,
+  },
+  {
+    id: 'performance-marketing',
+    title: 'Performance Marketing',
+    description:
+      'Paid acquisition campaigns focused on measurable growth across search and social.',
+    icon: TrendingUp,
+  },
+  {
+    id: 'food-styling',
+    title: 'Food Styling',
+    description:
+      'Appetite-forward photography and styling crafted for menus, ads, and social feeds.',
+    icon: UtensilsCrossed,
+  },
+
 ];

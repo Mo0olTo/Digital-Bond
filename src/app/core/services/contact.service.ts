@@ -12,12 +12,9 @@ export interface ContactPayload {
   providedIn: 'root',
 })
 export class ContactService {
-  /**
-   * Stub submission target — replace with real API when decided.
-   * TODO: replace placeholder submission transport
-   */
+
   submit(payload: ContactPayload): Observable<void> {
     void payload;
-    return of(undefined).pipe(delay(400));
+    return of(undefined).pipe(delay(800));
   }
 }

@@ -1,1 +1,99 @@
-<p>about works!</p>
+<section class="w-full bg-[var(--color-background)]">
+  <app-section-backgorund
+    sectionName="about"
+    title="about us"
+  ></app-section-backgorund> 
+
+
+  @defer (on viewport) {
+    <div class="mx-auto flex w-full max-w-[var(--container-width)] flex-col items-center px-4 py-[4.5rem] sm:px-6 md:px-8 md:py-24 lg:py-[7.5rem]" >
+
+
+      <app-section-title
+      title="our story"
+      headingId="about-story-heading"
+      ></app-section-title>
+
+      <div class="mt-8 w-full max-w-3xl text-center md:mt-10">
+        <h3
+          class="m-0 text-2xl font-bold uppercase mt-3 leading-6 text-[var(--color-text-secondary)] sm:text-3xl md:text-4xl"
+        >
+          Creative Commitment
+        </h3>
+        <p
+          class="m-0 mt-4 text-base leading-relaxed text-[var(--color-text-secondary)] sm:mt-5 sm:text-lg md:leading-8"
+        >
+          We are a bonded family that mix and match creativity and commitment to help brands go
+          beyond the limit. Bonders are a blend of cheerful, uprising and creative peeps working to
+          deliver outstanding services. We are committed and loyalty runs in the veins; when we are
+          put together our results blow minds.
+        </p>
+      </div>
+
+      <div
+        class="mt-12 grid w-full max-w-5xl grid-cols-1 gap-10 sm:mt-14 md:mt-16 md:grid-cols-2 md:gap-12 lg:gap-16"
+      >
+        <!-- vision -->
+        <article  class="about-slide about-slide--from-left flex items-start gap-4 sm:gap-5">
+          <div
+            class="flex size-14 shrink-0 items-center justify-center rounded-[var(--radius-image)] bg-[var(--color-surface)] shadow-[var(--shadow-sm)] sm:size-16"
+            aria-hidden="true"
+          >
+            <img
+              ngSrc="/images/About/vision.png"
+              width="40"
+              height="40"
+              alt=""
+              class="size-8 object-contain brightness-0 sm:size-10"
+            />
+          </div>
+          <div class="min-w-0 flex-1">
+            <h3
+              class="m-0 text-xl font-bold uppercase tracking-wide text-[var(--color-primary)] sm:text-2xl"
+            >
+              Vision
+            </h3>
+            <p
+              class="m-0 mt-2 text-base leading-relaxed text-[var(--color-text-secondary)] sm:mt-3 sm:text-lg"
+            >
+              To become the top agency offering online marketing solutions, digital sales services,
+              and software development in the MENA business sphere.
+            </p>
+          </div>
+        </article>
+
+        <!-- mission -->
+        <article  class="about-slide about-slide--from-right flex items-start gap-4 sm:gap-5">
+          <div
+            class="flex size-14 shrink-0 items-center justify-center rounded-[var(--radius-image)] bg-[var(--color-surface)] shadow-[var(--shadow-sm)] sm:size-16"
+            aria-hidden="true"
+          >
+            <img
+              ngSrc="/images/About/mission.png"
+              width="40"
+              height="40"
+              alt=""
+              class="size-8 object-contain brightness-0 sm:size-10"
+            />
+          </div>
+          <div class="min-w-0 flex-1">
+            <h3
+              class="m-0 text-xl font-bold uppercase tracking-wide text-[var(--color-primary)] sm:text-2xl"
+            >
+              Values
+            </h3>
+            <p
+              class="m-0 mt-2 text-base leading-relaxed text-[var(--color-text-secondary)] sm:mt-3 sm:text-lg"
+            >
+              Accountability, Honesty, Simplicity & Curiosity.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  } @placeholder {
+    <div class="min-h-[20rem]" aria-hidden="true"></div>
+  }
+
+  
+</section>

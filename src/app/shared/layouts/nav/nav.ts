@@ -73,7 +73,7 @@ export class Nav {
         this.document.removeEventListener('keydown', onKeydown);
       });
     });
-  }
+  } 
 
   toggleMenu(): void {
     this.menuOpen.update((open) => !open);

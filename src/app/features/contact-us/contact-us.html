@@ -1,81 +1,93 @@
-<section
-  aria-labelledby="contact-heading"
-  class="w-full bg-[var(--color-background)] px-4 py-18 sm:px-6 md:py-24 lg:px-8 lg:py-[7.5rem]"
->
-  <div class="mx-auto w-full max-w-2xl">
+<div class="w-full bg-[var(--color-background)]">
+  <app-section-backgorund
+    sectionName="contact"
+    title="contact us"
+  ></app-section-backgorund>
 
-    <div class="w-full flex justify-center items-center">
-        <app-section-title
-        title="Let's Innovate"
-        ></app-section-title>
-    </div>
-
-    <div class="my-8 text-center">
- 
-      <p class="mt-3 text-lg  font-bold leading-6 text-[var(--color-text-secondary)]">
-        Have a question? Send us a message and we'll get back to you.
-      </p>
-    </div>
-
-    <form
-      class="space-y-6 rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-sm)] sm:p-8"
-      [formGroup]="contactForm"
-      (ngSubmit)="onSubmit()"
-      novalidate
+    @defer (on viewport) {
+      <section
+      aria-labelledby="contact-heading"
+      class="w-full px-4 py-18 sm:px-6 md:py-24 lg:px-8 lg:py-[7.5rem]"
     >
-      <app-form-field
-        formControlName="name"
-        type="text"
-        inputId="name"
-        label="Name"
-        placeholder="Enter your name"
-        autocomplete="name"
-      />
+      <div class="mx-auto w-full max-w-2xl">
+        <div class="flex w-full items-center justify-center">
+          <app-section-title title="Let's Innovate" headingId="contact-heading" />
+        </div>
 
-      <app-form-field
-        formControlName="phone"
-        type="tel"
-        inputId="phone"
-        label="Phone"
-        placeholder="Enter your phone number"
-        autocomplete="tel"
-      />
+        <div class="my-8 text-center">
+          <p class="mt-3 text-lg font-bold leading-6 text-[var(--color-text-secondary)]">
+            Have a question? Send us a message and we'll get back to you.
+          </p>
+        </div>
 
-      <app-form-field
-        formControlName="email"
-        type="email"
-        inputId="email"
-        label="Email Address"
-        placeholder="Enter your email address"
-        autocomplete="email"
-      />
+        <form
+          class="space-y-6 rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-lg)] sm:p-8"
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          novalidate
+        >
+          <app-form-field
+            formControlName="name"
+            type="text"
+            inputId="name"
+            label="Name"
+            placeholder="Enter your name"
+            autocomplete="name"
+          />
 
-      <app-form-field
-        formControlName="message"
-        type="textarea"
-        inputId="message"
-        label="Message"
-        placeholder="Write your message..."
-        [rows]="6"
-      />
+          <app-form-field
+            formControlName="phone"
+            type="tel"
+            inputId="phone"
+            label="Phone"
+            placeholder="Enter your phone number"
+            autocomplete="tel"
+          />
 
-      @if (submitError()) {
-        <p class="m-0 text-sm text-[var(--color-primary)]" role="alert">
-          {{ submitError() }}
-        </p>
-      }
+          <app-form-field
+            formControlName="email"
+            type="email"
+            inputId="email"
+            label="Email Address"
+            placeholder="Enter your email address"
+            autocomplete="email"
+          />
 
-      <button
-        type="submit"
-        class="inline-flex w-full items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-text-white)] transition-[transform,background-color,box-shadow] duration-300 ease-out hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-md)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
-        [disabled]="isSubmitting()"
-      >
-        @if (isSubmitting()) {
-          Sending...
-        } @else {
-          Send Message
-        }
-      </button>
-    </form>
-  </div>
-</section>
+          <app-form-field
+            formControlName="message"
+            type="textarea"
+            inputId="message"
+            label="Message"
+            placeholder="Write your message..."
+            [rows]="6"
+          />
+
+          @if (submitError()) {
+            <p class="m-0 text-sm text-[var(--color-primary)]" role="alert">
+              {{ submitError() }}
+            </p>
+          }
+
+          <button
+            type="submit"
+            class="cursor-pointer inline-flex w-full items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-primary)]
+             px-6 py-3 text-base font-semibold text-[var(--color-text-white)] transition-[transform,background-color,box-shadow] duration-300 ease-out
+              hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--shadow-md)] focus-visible:outline-2 focus-visible:outline-offset-2 
+              focus-visible:outline-[var(--color-primary)] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
+            [disabled]="contactForm.invalid || isSubmitting()"
+          >
+            @if (isSubmitting()) {
+              Sending...
+            } @else {
+              Send Message
+            }
+          </button>
+        </form>
+      </div>
+    </section>
+    } @placeholder {
+      <div class="min-h-[20rem]" aria-hidden="true"></div>
+    }
+      
+
+</div>

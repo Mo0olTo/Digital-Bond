@@ -1,0 +1,42 @@
+.about-slide {
+    animation-duration: 3500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+  
+  .about-slide--from-left {
+    animation-name: about-slide-from-left;
+  }
+  
+  .about-slide--from-right {
+    animation-name: about-slide-from-right;
+    animation-delay: 800ms; // slight stagger
+  }
+  
+  @keyframes about-slide-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-2.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes about-slide-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(2.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .about-slide {
+      animation: none;
+    }
+  }
