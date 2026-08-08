@@ -105,67 +105,31 @@ body {
     --iti-path-flags-2x: url('/intl-tel-input/flags@2x.webp');
   }
 
-/* Country dropdown polish (panel can render outside component host) */
-.iti__hide {
-  display: none !important;
-}
+  /* Country dropdown polish (panel can render outside component host) */
+  .iti__country-list {
+    z-index: var(--z-modal);
+    max-height: 280px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    background: var(--color-surface);
+  }
 
-.iti__country-selector {
-  z-index: var(--z-modal);
-  overflow: hidden;
-  background: var(--color-surface);
-}
+  .iti__search-input {
+    border-radius: var(--radius-sm);
+    border-color: var(--color-border);
+    margin: 0.5rem;
+    width: calc(100% - 1rem);
+  }
 
-.iti--inline-country-selector .iti__country-selector {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-}
+  .iti__country {
+    padding-block: 0.625rem;
+  }
 
-.iti__country-list {
-  z-index: var(--z-modal);
-  max-height: min(280px, 50vh);
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  background: var(--color-surface);
-}
+  .iti__country.iti__highlight {
+    background: var(--color-primary-light);
+  }
 
-.iti__search-input {
-  border-radius: var(--radius-sm);
-  border-color: var(--color-border);
-  margin: 0.5rem;
-  width: calc(100% - 1rem);
-}
-
-.iti__country {
-  padding-block: 0.625rem;
-}
-
-.iti__country.iti__highlight {
-  background: var(--color-primary-light);
-}
-
-.iti__divider {
-  border-bottom-color: var(--color-border);
-}
-
-/* Mobile fullscreen country picker */
-.iti--fullscreen-popup.iti--detached-country-selector {
-  z-index: var(--z-modal);
-}
-
-.iti--fullscreen-popup .iti__country-selector {
-  width: 100%;
-  max-height: min(80vh, 560px);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  background: var(--color-surface);
-}
-
-.iti--fullscreen-popup .iti__country-list {
-  max-height: none;
-  flex: 1 1 auto;
-}
+  .iti__divider {
+    border-bottom-color: var(--color-border);
+  }
