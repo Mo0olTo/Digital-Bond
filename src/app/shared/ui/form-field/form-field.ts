@@ -72,8 +72,8 @@ export class FormField implements ControlValueAccessor, Validator {
   readonly countryOrder = input<Iso2[]>(DEFAULT_COUNTRY_ORDER);
   readonly countrySearch = input(true);
   readonly separateDialCode = input(true);
-  readonly matchDropdownWidth = input(true);
-  readonly countrySelectorMode = input<CountrySelectorMode>('AUTO');
+  readonly matchDropdownWidth = input(false);
+  readonly countrySelectorMode = input<CountrySelectorMode>('DROPDOWN');
 
   private readonly controlVersion = signal(0);
   private boundControl: AbstractControl | null = null;
