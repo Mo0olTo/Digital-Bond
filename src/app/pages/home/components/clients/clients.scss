@@ -1,0 +1,124 @@
+:host {
+  display: block;
+}
+
+.clients {
+  position: relative;
+  padding-block: 4.5rem;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+@media (min-width: 768px) {
+  .clients {
+    padding-block: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .clients {
+    padding-block: 7.5rem;
+  }
+}
+
+.clients__decor {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.clients__close-icon {
+  position: absolute;
+  top: 8%;
+  right: -3rem;
+  width: clamp(2rem, 4vw, 3rem);
+  opacity: 0.85;
+  animation: clients-roll 12s linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes clients-roll {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.85;
+  }
+  92% {
+    opacity: 0.85;
+  }
+  100% {
+    /* move left + spin so it feels like rolling */
+    transform: translateX(calc(-100vw - 4rem)) rotate(-720deg);
+    opacity: 0;
+  }
+}
+.clients__carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding-inline: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .clients__carousel {
+    gap: 1rem;
+    padding-inline: 1.5rem;
+  }
+}
+
+.clients__nav {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.clients__viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.clients__viewport:active {
+  cursor: grabbing;
+}
+
+.clients__track {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.clients__slide {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: center;
+  min-width: 0;
+  padding-inline: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .clients__slide {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .clients__slide {
+    flex-basis: 33.333%;
+  }
+}
+
+@keyframes clients-face-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
