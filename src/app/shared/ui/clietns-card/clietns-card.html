@@ -1,0 +1,32 @@
+<section class="group [perspective:1000px]">
+    <div
+      class="relative h-[250px] w-[250px] transition-transform duration-700 [transform-style:preserve-3d]
+             group-hover:[transform:rotateY(180deg)] "
+    >
+  
+      <!-- Front -->
+      <div class="absolute inset-0 flex items-center justify-center[backface-visibility:hidden] ">
+        <img
+          [ngSrc]="clientImage()"
+          loading="lazy"
+          width="250"
+          height="250"
+          class="h-full w-full object-contain"
+          alt="Client photo"
+        />
+      </div>
+  
+      <!-- Back -->
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center  rounded-xl
+         bg-black [backface-visibility:hidden] [transform:rotateY(180deg)] gap-4">
+        <span class="text-2xl font-bold text-white">
+          Digital Bond
+          
+        </span>
+        <img src="/images/logos/logo_black.webp" class="w-[70px] h-[50px]" alt="Bond-Logo"> 
+        
+      </div>
+  
+    </div>
+  </section>

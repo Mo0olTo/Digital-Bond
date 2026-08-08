@@ -24,6 +24,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/intl-tel-input/dist/img",
+                "output": "intl-tel-input"
               }
             ],
             "styles": [
@@ -86,6 +91,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/intl-tel-input/dist/img",
+                "output": "intl-tel-input"
               }
             ],
             "styles": [

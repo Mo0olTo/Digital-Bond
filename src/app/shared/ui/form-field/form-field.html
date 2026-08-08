@@ -1,0 +1,90 @@
+<div class="form-field flex w-full flex-col items-start justify-center gap-1">
+  <label
+    class="mb-1 block text-sm font-medium text-[var(--color-text-primary)]"
+    [attr.for]="inputId()"
+  >
+    {{ label() }}
+  </label>
+
+  @if (type() === 'textarea') {
+    <textarea
+      class="form-field__control"
+      [id]="inputId()"
+      [rows]="rows()"
+      [placeholder]="placeholder()"
+      [value]="value()"
+      [disabled]="disabled()"
+      [attr.aria-invalid]="isInvalid()"
+      [attr.aria-describedby]="errorId"
+      (input)="onInput($event)"
+      (blur)="onBlur()"
+      [class.form-field__control--invalid]="isInvalid()"
+    ></textarea>
+  } @else if (type() === 'tel') {
+    <div
+      class="form-field__tel w-full"
+      [class.form-field__tel--invalid]="isInvalid()"
+    >
+      @if (isBrowser) {
+        <intl-tel-input
+          [ngModel]="value()"
+          [ngModelOptions]="{ standalone: true }"
+          [disabled]="disabled()"
+          [initialCountry]="initialCountry()"
+          [countryOrder]="countryOrder()"
+          [countrySearch]="countrySearch()"
+          [separateDialCode]="separateDialCode()"
+          [matchDropdownWidth]="matchDropdownWidth()"
+          [countrySelectorMode]="countrySelectorMode()"
+          [showFlags]="true"
+          [loadUtils]="loadUtils"
+          [inputAttributes]="{
+            id: inputId(),
+            autocomplete: autocomplete() || 'tel',
+            'aria-invalid': isInvalid() ? 'true' : 'false',
+            'aria-describedby': errorId,
+          }"
+          (ngModelChange)="onPhoneChange($event)"
+          (validityChange)="onPhoneValidityChange($event)"
+          (blur)="onBlur()"
+        />
+      } @else {
+        <input
+          class="form-field__control form-field__control--tel-fallback"
+          [id]="inputId()"
+          type="tel"
+          [placeholder]="placeholder()"
+          [value]="value()"
+          [disabled]="disabled()"
+          autocomplete="tel"
+          [attr.aria-invalid]="isInvalid()"
+          [attr.aria-describedby]="errorId"
+          (input)="onInput($event)"
+          (blur)="onBlur()"
+        />
+      }
+    </div>
+  } @else {
+    <input
+      class="form-field__control text-[var(--color-text-primary)]"
+      [id]="inputId()"
+      [type]="type()"
+      [placeholder]="placeholder()"
+      [value]="value()"
+      [disabled]="disabled()"
+      [attr.autocomplete]="autocomplete() || null"
+      [attr.aria-invalid]="isInvalid()"
+      [attr.aria-describedby]="errorId"
+      (input)="onInput($event)"
+      (blur)="onBlur()"
+      [class.form-field__control--invalid]="isInvalid()"
+    />
+  }
+
+  <app-error-msg
+    [control]="control"
+    [label]="label()"
+    [type]="type()"
+    [errorId]="errorId"
+  />
+</div>

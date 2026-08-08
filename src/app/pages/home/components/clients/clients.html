@@ -1,0 +1,61 @@
+<section
+  class="clients"
+  aria-labelledby="clients-heading"
+  (pointerenter)="onPointerEnter()"
+  (pointerleave)="onPointerLeave()"
+>
+  <div class="clients__decor" aria-hidden="true">
+    <img
+      ngSrc="/images/icons/close_icon.png"
+      width="48"
+      height="48"
+      alt="x-design"
+      class="clients__close-icon"
+    />
+
+    <img
+    ngSrc="/images/Screens/screen-circle.png"
+    width="960"
+    height="960"
+    alt=""
+    class="pointer-events-none absolute -bottom-[60%] lg:-bottom-[70%] left-[14%] lg:left-[5%] z-0 size-[min(90vw,960px)] select-none opacity-90"
+    />
+  </div>
+
+  <div class="relative z-[1] mx-auto mb-10 flex w-full max-w-[var(--container-width)] justify-center px-4 md:px-8">
+    <app-section-title [title]="'happy clients'" [headingId]="'clients-heading'" />
+  </div>
+
+  <div class="clients__carousel relative z-[1]">
+    <app-carousel-button
+      class="clients__nav clients__nav--prev"
+      [direction]="'prev'"
+      [variant]="'light'"
+      [ariaLabel]="'Previous clients'"
+      [disabled]="!canScrollPrev()"
+      (pressed)="scrollPrev()"
+    />
+
+    <div class="clients__viewport" #viewport>
+      <div class="clients__track">
+        @for (client of clients(); track client) {
+          <div class="clients__slide">
+            <app-clietns-card [clientImage]="client" />
+          </div>
+        }
+      </div>
+    </div>
+
+    <app-carousel-button
+      class="clients__nav clients__nav--next"
+      [direction]="'next'"
+      [variant]="'light'"
+      [ariaLabel]="'Next clients'"
+      [disabled]="!canScrollNext()"
+      (pressed)="scrollNext()"
+    /> 
+
+
+
+  </div>
+</section>

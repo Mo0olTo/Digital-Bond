@@ -1,0 +1,27 @@
+@if (showErrors()) {
+  <div [id]="errorId()" class="error-messages" role="alert">
+    @if (control()?.errors?.['required']) {
+      <p class="error-messages__item">{{ label() }} is required.</p>
+    }
+
+    @if (control()?.errors?.['email']) {
+      <p class="error-messages__item">{{ label() }} must be a valid email address.</p>
+    }
+
+    @if (control()?.errors?.['minlength']; as minLengthError) {
+      <p class="error-messages__item">
+        {{ label() }} must be at least {{ minLengthError.requiredLength }} characters.
+      </p>
+    }
+
+    @if (control()?.errors?.['maxlength']; as maxLengthError) {
+      <p class="error-messages__item">
+        {{ label() }} cannot exceed {{ maxLengthError.requiredLength }} characters.
+      </p>
+    }
+
+    @if (type() === 'tel' && control()?.errors?.['invalidPhone']) {
+      <p class="error-messages__item">{{ label() }} must be a valid phone number.</p>
+    }
+  </div>
+}
