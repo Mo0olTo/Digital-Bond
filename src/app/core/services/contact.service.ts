@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 
 export interface ContactPayload {
@@ -12,9 +12,16 @@ export interface ContactPayload {
   providedIn: 'root',
 })
 export class ContactService {
+  private readonly submittedName = signal<string | null>(null);
+
+  readonly userName = this.submittedName.asReadonly();
 
   submit(payload: ContactPayload): Observable<void> {
-    void payload;
+    this.submittedName.set(payload.name.trim());
     return of(undefined).pipe(delay(800));
+  }
+
+  clearSubmittedName(): void {
+    this.submittedName.set(null);
   }
 }

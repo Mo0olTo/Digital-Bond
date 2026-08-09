@@ -22,19 +22,19 @@ export class Hero implements OnInit, OnDestroy {
 
   readonly showcaseImages: readonly HeroShowcaseImage[] = [
     {
-      src: '/images/icons/orange.webp',
+      src: '/images/icons/orange1.webp',
       alt: 'Orange product illustration',
       width: 320,
       height: 320,
     },
     {
-      src: '/images/icons/lamp.webp',
+      src: '/images/icons/lamp1.webp',
       alt: 'Lamp product illustration',
       width: 320,
       height: 320,
     },
     {
-      src: '/images/icons/pc.webp',
+      src: '/images/icons/pc1.webp',
       alt: 'PC product illustration',
       width: 320,
       height: 320,

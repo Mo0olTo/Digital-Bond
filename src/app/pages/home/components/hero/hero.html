@@ -1,40 +1,40 @@
 <section
-  class="relative isolate min-h-[100svh] w-full overflow-hidden bg-[var(--color-background)] "
+  class="relative isolate w-full overflow-hidden bg-[var(--color-background)] pb-10 sm:pb-12 lg:min-h-[100svh] lg:pb-0"
 >
   <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
     <div class="hero-blob hero-blob--a"></div>
     <div class="hero-blob hero-blob--b"></div>
     <div class="hero-blob hero-blob--c"></div>
-
+    
     <img
       ngSrc="/images/icons/half_circle_icon.png"
-      width="80"
-      height="80"
-      alt=""
+      width="120"
+      height="102"
+      alt="design-animaiton"
       class="hero-icon hero-icon--half-circle"
     />
     <img
       ngSrc="/images/icons/close_icon.png"
-      width="20"
-      height="30"
-      alt=""
+      width="60"
+      height="68"
+      alt="x-design"
       class="hero-icon hero-icon--close"
     />
     <img
-      ngSrc="/images/icons/two_face_icon.png"
+      ngSrc="/images/icons/two_face_icon1.webp"
       width="120"
       height="120"
-      alt=""
+      alt="arrow-design"
       class="hero-icon hero-icon--two-face"
     />
 
     <div class="hero-bond-stack">
-      <div class="hero-bond">
+      <div class="hero-bond ">
         <img
           ngSrc="/images/icons/bond-1-red.webp"
           width="160"
           height="160"
-          alt=""
+          alt="design-logo-bond"
           class="hero-bond__image"
           [class.hero-bond__image--active]="!bondWhiteActive()"
         />
@@ -42,18 +42,18 @@
           ngSrc="/images/icons/bond-2-white.webp"
           width="160"
           height="160"
-          alt=""
+          alt="design-logo-bond"
           class="hero-bond__image"
           [class.hero-bond__image--active]="bondWhiteActive()"
         />
       </div>
 
-      <div class="hero-bond">
+      <div class="hero-bond ">
         <img
           ngSrc="/images/icons/bond-1-red.webp"
           width="160"
           height="60"
-          alt=""
+          alt="design-logo-bond"
           class="hero-bond__image"
           [class.hero-bond__image--active]="!bondWhiteActive()"
         />
@@ -61,7 +61,7 @@
           ngSrc="/images/icons/bond-2-white.webp"
           width="160"
           height="160"
-          alt=""
+          alt="design-logo-bond"
           class="hero-bond__image"
           [class.hero-bond__image--active]="bondWhiteActive()"
         />
@@ -69,7 +69,7 @@
     </div>
 
     <img
-      ngSrc="/images/Screens/screen-circle.png"
+      ngSrc="/images/Screens/screen-circle.webp"
       width="640"
       height="640"
       alt="Circle-Design"
@@ -77,9 +77,8 @@
     />
   </div>
 
-  <div class="relative container z-10 mx-auto flex min-h-[100svh] w-full max-w-[var(--container-width)]
-        flex-col justify-start px-4 sm:px-6 lg:px-8">
-    
+  <div class="relative z-10 mx-auto flex w-full max-w-[var(--container-width)]
+        flex-col justify-start px-4 sm:px-6 lg:min-h-[100svh] lg:px-8">    
     <!-- header -->
     <div class="flex justify-center items-center z-50">
         <div class="mt-10 pt-6 flex justify-center">
@@ -107,10 +106,11 @@
       </div>
 
       <img
-        ngSrc="/images/colored%20layers/shadow_effect_right.png"
+        ngSrc="/images/colored%20layers/shadow_effect_right.webp"
         width="400"
         height="600"
-        alt=""
+        alt="colored-layer"
+        priority
         aria-hidden="true"
         class="hero-showcase-glow"
       />

@@ -28,7 +28,11 @@
         id="done-title"
         class="m-0 mt-3 text-2xl font-bold text-[var(--color-text-primary)] sm:text-3xl"
       >
-        Thank you!
+        @if (userName()) {
+          Thank you, <br>{{ userName() }}!
+        } @else {
+          Thank you!
+        }
       </h1>
 
       <p

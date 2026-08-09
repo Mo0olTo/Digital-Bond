@@ -1,6 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ContactService } from '../../core/services/contact.service';
 
 @Component({
   selector: 'app-done',
@@ -8,4 +9,8 @@ import { RouterLink } from '@angular/router';
   templateUrl: './done.html',
   styleUrl: './done.scss',
 })
-export class Done {}
+export class Done {
+  private readonly contactService = inject(ContactService);
+
+  readonly userName = this.contactService.userName;
+}
