@@ -86,6 +86,7 @@ body {
     --transition-fast: 200ms ease;
     --transition-normal: 300ms ease;
     --transition-slow: 500ms ease;
+    --transition-nav-scroll: 300ms ease-out;
   
     /* ===== Navbar ===== */
   
@@ -104,6 +105,31 @@ body {
     /* ===== intl-tel-input flag sprites (styles-no-assets) ===== */
     --iti-path-flags-1x: url('/intl-tel-input/flags.webp');
     --iti-path-flags-2x: url('/intl-tel-input/flags@2x.webp');
+  }
+
+  /* Scrollbar — Firefox */
+  html {
+    scrollbar-color: var(--color-primary) var(--color-surface-secondary);
+    scrollbar-width: thin;
+  }
+
+  /* Scrollbar — Chrome, Safari, Edge */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--color-surface-secondary);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary-hover);
   }
 
   /* Country dropdown polish (panel can render outside component host) */
