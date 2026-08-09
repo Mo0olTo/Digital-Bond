@@ -13,9 +13,11 @@ The app delivers a modern agency-style experience with Server-Side Rendering (SS
 
 
 
-  ![PageSpeed Insights Desktop](/pageSpeedInsights/desktop.png) 
+  ![PageSpeed Insights Desktop](/public/pageSpeedInsights/desktop.png) 
+ 
   ---*---*---*---
-  ![PageSpeed Insights Mobile](/pageSpeedInsights/mobile.png)
+ 
+  ![PageSpeed Insights Mobile](/public/pageSpeedInsights/mobile.png)
 
 ------
 
