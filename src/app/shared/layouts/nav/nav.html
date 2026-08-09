@@ -1,12 +1,12 @@
 <nav
   aria-label="Primary"
-  class="nav sticky top-0 z-50 w-full transition-[background-color,box-shadow,backdrop-filter] duration-[var(--transition-normal)] ease-out"
+  class="nav sticky top-0 z-50 w-full"
   [class.nav--scrolled]="scrolled()"
   [class.nav--elevated]="scrolled()"
-  [class.themeScroll]="scrolled()"
+  [class.nav--menu-open]="menuOpen()"
 >
   <div
-    class=" mx-auto flex h-[var(--navbar-height)] w-full container items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
+    class="relative z-10 mx-auto flex h-[var(--navbar-height)] w-full container items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
   >
     <a
       routerLink="/home"
@@ -31,7 +31,7 @@
             [routerLink]="link.path"
             routerLinkActive="nav-link--active"
             [routerLinkActiveOptions]="{ exact: link.exact }"
-            class="nav-link text-lg font-bold transition-colors duration-[var(--transition-fast)] ease-out focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-primary)]"
+            class="nav-link text-lg font-medium transition-colors duration-[var(--transition-fast)] ease-out focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-primary)]"
           >
             {{ link.label }}
           </a>
@@ -60,7 +60,7 @@
 
     <button
       type="button"
-      class="nav-menu-btn relative z-10 inline-flex cursor-pointer size-12 items-center justify-center rounded-[var(--radius-sm)] transition-colors duration-[var(--transition-fast)] ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] lg:hidden"
+      class="nav-menu-btn relative z-10 inline-flex cursor-pointer size-12 items-center justify-center rounded-[var(--radius-sm)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] lg:hidden"
       [attr.aria-expanded]="menuOpen()"
       aria-controls="mobile-nav-panel"
       [attr.aria-label]="menuOpen() ? 'Close menu' : 'Open menu'"
@@ -74,11 +74,13 @@
     </button>
   </div>
 
-  @if (menuOpen()) {
-    <div
-      id="mobile-nav-panel"
-      class="mobile-nav-panel border-t lg:hidden"
-    >
+  <div
+    id="mobile-nav-panel"
+    class="mobile-nav-panel lg:hidden"
+    [class.mobile-nav-panel--open]="menuOpen()"
+    [attr.aria-hidden]="!menuOpen()"
+    [attr.inert]="menuOpen() ? null : ''"
+  >
       <ul class="mx-auto flex max-w-[var(--container-width)] flex-col gap-1 px-4 py-4 sm:px-6" role="list">
         @for (link of navLinks; track link.path) {
           <li>
@@ -86,7 +88,7 @@
               [routerLink]="link.path"
               routerLinkActive="nav-link--active"
               [routerLinkActiveOptions]="{ exact: link.exact }"
-              class="nav-link mobile-nav-link block rounded-[var(--radius-md)] px-4 py-3 text-base font-medium transition-colors duration-[var(--transition-fast)] ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+              class="nav-link mobile-nav-link block rounded-[var(--radius-md)] px-4 py-3 text-base font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
               (click)="closeMenu()"
             >
               {{ link.label }}
@@ -116,8 +118,7 @@
           </li>
         }
       </ul>
-    </div>
-  }
+  </div>
 </nav>
 
 <ng-template #socialIcon let-icon>
