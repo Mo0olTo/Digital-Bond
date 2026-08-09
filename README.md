@@ -5,7 +5,20 @@ The app delivers a modern agency-style experience with Server-Side Rendering (SS
 
 # Deployment-Link 
   https://digital-bond-six.vercel.app/home
----
+
+------
+
+# PageSpeed Insights - Link
+  https://pagespeed.web.dev/analysis/https-digital-bond-six-vercel-app-home/fr0po4hxjf?form_factor=desktop 
+
+
+
+  ![PageSpeed Insights Desktop](/pageSpeedInsights/desktop.png) 
+  ---*---*---*---
+  ![PageSpeed Insights Mobile](/pageSpeedInsights/mobile.png)
+
+------
+
 
 ## 1. Project Overview
 
