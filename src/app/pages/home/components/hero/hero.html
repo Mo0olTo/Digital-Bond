@@ -28,46 +28,6 @@
       class="hero-icon hero-icon--two-face"
     />
 
-    <div class="hero-bond-stack">
-      <div class="hero-bond ">
-        <img
-          ngSrc="/images/icons/bond-1-red.webp"
-          width="160"
-          height="160"
-          alt="design-logo-bond"
-          class="hero-bond__image"
-          [class.hero-bond__image--active]="!bondWhiteActive()"
-        />
-        <img
-          ngSrc="/images/icons/bond-2-white.webp"
-          width="160"
-          height="160"
-          alt="design-logo-bond"
-          class="hero-bond__image"
-          [class.hero-bond__image--active]="bondWhiteActive()"
-        />
-      </div>
-
-      <div class="hero-bond ">
-        <img
-          ngSrc="/images/icons/bond-1-red.webp"
-          width="160"
-          height="60"
-          alt="design-logo-bond"
-          class="hero-bond__image"
-          [class.hero-bond__image--active]="!bondWhiteActive()"
-        />
-        <img
-          ngSrc="/images/icons/bond-2-white.webp"
-          width="160"
-          height="160"
-          alt="design-logo-bond"
-          class="hero-bond__image"
-          [class.hero-bond__image--active]="bondWhiteActive()"
-        />
-      </div>
-    </div>
-
     <img
       ngSrc="/images/Screens/screen-circle.webp"
       width="640"
@@ -88,6 +48,65 @@
               <span class="text-4xl font-normal uppercase tracking-[6px] lg:text-7xl">Bond</span>
             </p>
           </div>
+    </div>
+
+    <div class="hero-bond-stack pointer-events-none" aria-hidden="true">
+      <div class="hero-bond hero-bond--top-right">
+        <img
+          ngSrc="/images/icons/bond-1-red.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="!bondWhiteActive()"
+        />
+        <img
+          ngSrc="/images/icons/bond-2-white.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="bondWhiteActive()"
+        />
+      </div>
+
+      <div class="hero-bond hero-bond--bottom-left">
+        <img
+          ngSrc="/images/icons/bond-1-red.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="!bondWhiteActive()"
+        />
+        <img
+          ngSrc="/images/icons/bond-2-white.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="bondWhiteActive()"
+        />
+      </div>
+
+      <div class="hero-bond hero-bond--center">
+        <img
+          ngSrc="/images/icons/bond-1-red.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="!bondWhiteActive()"
+        />
+        <img
+          ngSrc="/images/icons/bond-2-white.webp"
+          width="160"
+          height="160"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="bondWhiteActive()"
+        />
+      </div>
     </div>
 
     <div class="hero-showcase-wrap">

@@ -3,7 +3,24 @@
 Production-ready Angular landing page for Digital Bond. 
 The app delivers a modern agency-style experience with Server-Side Rendering (SSR), zoneless change detection, and signal-driven UI state.
 
----
+# Deployment-Link 
+  https://digital-bond-six.vercel.app/home
+
+------
+
+# PageSpeed Insights - Link
+  https://pagespeed.web.dev/analysis/https-digital-bond-six-vercel-app-home/fr0po4hxjf?form_factor=desktop 
+
+
+
+  ![PageSpeed Insights Desktop](/public/pageSpeedInsights/desktop.png) 
+ 
+  ---*---*---*---
+ 
+  ![PageSpeed Insights Mobile](/public/pageSpeedInsights/mobile.png)
+
+------
+
 
 ## 1. Project Overview
 
