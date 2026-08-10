@@ -19,18 +19,32 @@ function loadExtendedFonts(): void {
   document.head.appendChild(link);
 }
 
+/** Load 500/600/700 weights only after the page has fully loaded (off the LCP path). */
 function scheduleExtendedFonts(): void {
   if (typeof window === 'undefined') {
     return;
   }
 
-  const run = () => loadExtendedFonts();
-  const idleWindow = window as Window & {
-    requestIdleCallback?: (callback: () => void) => number;
+  const run = (): void => {
+    const idleWindow = window as Window & {
+      requestIdleCallback?: (
+        callback: () => void,
+        options?: { timeout: number },
+      ) => number;
+    };
+
+    if (typeof idleWindow.requestIdleCallback === 'function') {
+      idleWindow.requestIdleCallback(() => loadExtendedFonts(), {
+        timeout: 4000,
+      });
+      return;
+    }
+
+    window.setTimeout(() => loadExtendedFonts(), 2000);
   };
 
-  if (typeof idleWindow.requestIdleCallback === 'function') {
-    idleWindow.requestIdleCallback(run);
+  if (document.readyState === 'complete') {
+    run();
     return;
   }
 

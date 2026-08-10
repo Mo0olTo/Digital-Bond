@@ -28,51 +28,12 @@
       class="hero-icon hero-icon--two-face"
     />
 
-    <div class="hero-bond-stack">
-      <div class="hero-bond ">
-        <img
-          ngSrc="/images/icons/bond-1-red.webp"
-          width="160"
-          height="160"
-          alt="design-logo-bond"
-          class="hero-bond__image"
-          [class.hero-bond__image--active]="!bondWhiteActive()"
-        />
-        <img
-          ngSrc="/images/icons/bond-2-white.webp"
-          width="160"
-          height="160"
-          alt="design-logo-bond"
-          class="hero-bond__image"
-          [class.hero-bond__image--active]="bondWhiteActive()"
-        />
-      </div>
-
-      <div class="hero-bond ">
-        <img
-          ngSrc="/images/icons/bond-1-red.webp"
-          width="160"
-          height="60"
-          alt="design-logo-bond"
-          class="hero-bond__image"
-          [class.hero-bond__image--active]="!bondWhiteActive()"
-        />
-        <img
-          ngSrc="/images/icons/bond-2-white.webp"
-          width="160"
-          height="160"
-          alt="design-logo-bond"
-          class="hero-bond__image"
-          [class.hero-bond__image--active]="bondWhiteActive()"
-        />
-      </div>
-    </div>
-
     <img
       ngSrc="/images/Screens/screen-circle.webp"
-      width="640"
-      height="640"
-      alt="Circle-Design"
+      width="800"
+      height="800"
+      alt=""
+      aria-hidden="true"
       class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 select-none"
     />
   </div>
@@ -84,10 +45,72 @@
         <div class="mt-10 pt-6 flex justify-center">
             <p class="flex flex-col items-center gap-2 text-[var(--color-primary)] md:flex-row md:gap-2">
               <span class="text-4xl font-normal uppercase tracking-[6px] lg:text-7xl">Digital</span>
-              <img ngSrc="/images/logos/logo_black.webp" width="60" height="65" priority class="self-center" alt="Digital Bond Logo">
+              <img ngSrc="/images/logos/logo_black.webp" width="300" height="220" priority class="h-[65px] w-auto self-center" alt="Digital Bond Logo">
               <span class="text-4xl font-normal uppercase tracking-[6px] lg:text-7xl">Bond</span>
             </p>
           </div>
+    </div>
+
+    <div class="hero-bond-stack pointer-events-none" aria-hidden="true">
+      <div class="hero-bond hero-bond--top-right">
+        <img
+          ngSrc="/images/icons/bond-1-red.webp"
+          width="320"
+          height="64"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="!bondWhiteActive()"
+          priority
+        />
+        <img
+          ngSrc="/images/icons/bond-2-white.webp"
+          width="320"
+          height="64"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="bondWhiteActive()"
+        />
+      </div>
+
+      <div class="hero-bond hero-bond--bottom-left">
+        <img
+          ngSrc="/images/icons/bond-1-red.webp"
+          width="320"
+          height="64"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="!bondWhiteActive()"
+          priority
+        />
+        <img
+          ngSrc="/images/icons/bond-2-white.webp"
+          width="320"
+          height="64"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="bondWhiteActive()"
+        />
+      </div>
+
+      <div class="hero-bond hero-bond--center">
+        <img
+          ngSrc="/images/icons/bond-1-red.webp"
+          width="320"
+          height="64"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="!bondWhiteActive()"
+          priority
+        />
+        <img
+          ngSrc="/images/icons/bond-2-white.webp"
+          width="320"
+          height="64"
+          alt=""
+          class="hero-bond__image"
+          [class.hero-bond__image--active]="bondWhiteActive()"
+        />
+      </div>
     </div>
 
     <div class="hero-showcase-wrap">
@@ -110,7 +133,6 @@
         width="400"
         height="600"
         alt="colored-layer"
-        priority
         aria-hidden="true"
         class="hero-showcase-glow"
       />
