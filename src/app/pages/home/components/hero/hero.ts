@@ -24,20 +24,20 @@ export class Hero implements OnInit, OnDestroy {
     {
       src: '/images/icons/orange1.webp',
       alt: 'Orange product illustration',
-      width: 320,
-      height: 320,
+      width: 600,
+      height: 531,
     },
     {
       src: '/images/icons/lamp1.webp',
       alt: 'Lamp product illustration',
-      width: 320,
-      height: 320,
+      width: 600,
+      height: 531,
     },
     {
       src: '/images/icons/pc1.webp',
       alt: 'PC product illustration',
-      width: 320,
-      height: 320,
+      width: 600,
+      height: 531,
     },
   ];
 
